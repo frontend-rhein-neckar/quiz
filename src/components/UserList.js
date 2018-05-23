@@ -6,17 +6,16 @@ class UserList extends Component {
     const pointsB = b.points
     let comparison = 0;
     if (pointsA > pointsB) {
-      comparison = 1;
-    } else if (pointsA < pointsB) {
       comparison = -1;
+    } else if (pointsA < pointsB) {
+      comparison = 1;
     }
     return comparison;
   }
 
   render() {
-    console.log(this.props.users)
     const userItems = this.props.users.sort(this.compare).map((user, index) =>
-      <li key={user.id}>{user.name} {user.points}</li>
+      <li key={user.id}>{user.name} {user.points} <button onClick={() => this.props.increment(user.id)}>+1</button> <button onClick={() => this.props.decrement(user.id)}>-1</button></li>
     );
     return (
       <ul>{userItems}</ul>
