@@ -9,6 +9,7 @@ class App extends Component {
     super(props)
 
     this.adduser = this.adduser.bind(this)
+    this.removeuser = this.removeuser.bind(this)
     this.increment = this.increment.bind(this)
     this.decrement = this.decrement.bind(this)
 
@@ -29,6 +30,15 @@ class App extends Component {
       users: [...this.state.users, newuser]
     })
     e.target.adduser.value = ''
+  }
+
+  removeuser(id) {
+    const index = this.state.users.findIndex(user => user.id === id)
+    const users = [...this.state.users]
+    users.splice(index, 1)
+    this.setState({
+      users: users
+    })
   }
 
   increment(id) {
@@ -71,8 +81,15 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Quiz</h1>
         </header>
-        <AddUser adduser={this.adduser}/>
-        <UserList users={this.state.users} increment={this.increment} decrement={this.decrement}/>
+        <AddUser
+          adduser={this.adduser}
+        />
+        <UserList
+          users={this.state.users}
+          removeuser={this.removeuser}
+          increment={this.increment}
+          decrement={this.decrement}
+          />
       </div>
     );
   }

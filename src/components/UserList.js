@@ -15,7 +15,7 @@ class UserList extends Component {
 
   render() {
     const userItems = this.props.users.sort(this.compare).map((user, index) =>
-      <li key={user.id}>{user.name} {user.points} <button onClick={() => this.props.increment(user.id)}>+1</button> <button onClick={() => this.props.decrement(user.id)}>-1</button></li>
+      <li key={user.id}><button onClick={() => this.props.removeuser(user.id)}>&times;</button> {user.name} {user.points} <button onClick={() => this.props.increment(user.id)}>+1</button> <button onClick={() => this.props.decrement(user.id)}>-1</button></li>
     );
     return (
       <ul>{userItems}</ul>
