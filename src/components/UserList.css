@@ -1,0 +1,65 @@
+.UserList {
+    list-style-type: none;
+    max-width: 33.3333rem;
+    margin: 0 auto;
+    text-align: left;
+    color: #000000;
+    padding: 0
+}
+
+.UserList button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    -webkit-appearance: none
+}
+
+.UserList button:hover {
+    cursor: pointer
+}
+
+.UserList li {
+    border-radius: 0.125rem;
+    margin-bottom: 0.75rem
+}
+
+.UserList li:nth-child(odd){
+    background: rgba(255,255,255, 0.75)
+}
+
+.UserList li:nth-child(even){
+    background: rgba(255,255,255, 1.00)
+}
+
+.UserList .remove-user {
+    border-right: 1px solid #000000;
+    padding: 5px 0.25rem;
+    margin-right: 0.75rem
+}
+
+.UserList .vote-buttons {
+    float: right;
+    margin-left: 0.75rem
+}
+
+.UserList .vote-buttons button {
+    padding: 5px 0.25rem
+}
+
+.UserList .vote-buttons button {
+    border-left: 1px solid #000000
+}
+
+.UserList button {
+    transition: background 0.35s
+}
+
+.UserList .vote-buttons .increment:hover {
+    background: rgba(0,255,0,0.5)
+}
+
+.UserList .remove-user:hover,
+.UserList .vote-buttons .decrement:hover {
+    background: rgba(255,0,0,0.5)
+}

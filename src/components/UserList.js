@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './UserList.css';
 
 class UserList extends Component {
   compare(a, b) {
@@ -15,10 +16,17 @@ class UserList extends Component {
 
   render() {
     const userItems = this.props.users.sort(this.compare).map((user, index) =>
-      <li key={user.id}><button onClick={() => this.props.removeuser(user.id)}>&times;</button> {user.name} {user.points} <button onClick={() => this.props.increment(user.id)}>+1</button> <button onClick={() => this.props.decrement(user.id)}>-1</button></li>
+      <li key={user.id}>
+        <button onClick={() => this.props.removeuser(user.id)} className="remove-user"><span role="img" aria-label="delete">🗑️</span></button>
+        {user.name} ({user.points} {user.points === 1 ? 'point' : 'points'})
+        <span className="vote-buttons">
+          <button onClick={() => this.props.increment(user.id)} className="increment"><span role="img" aria-label="+1">👍</span></button>
+          <button onClick={() => this.props.decrement(user.id)} className="decrement"><span role="img" aria-label="-1">👎</span></button>
+        </span>
+      </li>
     );
     return (
-      <ul>{userItems}</ul>
+      <ul className="UserList">{userItems}</ul>
     );
   }
 }

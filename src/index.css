@@ -1,5 +1,23 @@
+body,
+html,
+input,
+button {
+  font-size: 24px
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: #222;
+  color: #fff;
+  font-family: 'Source Serif Pro', serif
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/source-serif-pro-v5-latin-regular.woff2') format('woff2'),
+       url('fonts/source-serif-pro-v5-latin-regular.woff') format('woff')
 }

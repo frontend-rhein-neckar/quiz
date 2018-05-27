@@ -1,8 +1,7 @@
 .App {
-  text-align: center;
+  text-align: center
 }
 
-body {
-  background: #222;
-  color: #fff;
+.App h1 {
+  font-weight: normal
 }
